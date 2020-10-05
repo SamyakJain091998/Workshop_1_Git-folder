@@ -6,11 +6,11 @@ public class UC3 {
 	private static char[] boardArray;
 
 	private static char[] Board() {
-		char[] boardArray = new char[10];
-		for (int i = 0; i < boardArray.length; i++) {
-			boardArray[i] = '$';
+		char[] dummyBoardArray = new char[10];
+		for (int i = 0; i < dummyBoardArray.length; i++) {
+			dummyBoardArray[i] = '$';
 		}
-		return boardArray;
+		return dummyBoardArray;
 	}
 
 	private static void ChooseLetter() {
@@ -46,7 +46,6 @@ public class UC3 {
 	private static void ShowBoard(char[] boardArray) {
 		System.out.println("-----THE BOARD-----");
 		System.out.println("___________________");
-		System.out.println();
 		System.out.print("|  ");
 		for (char i = 1; i < 3; i++) {
 			System.out.print(boardArray[i] + "  |  ");
@@ -55,7 +54,6 @@ public class UC3 {
 		System.out.print("|");
 		System.out.println();
 		System.out.println("___________________");
-		System.out.println();
 		System.out.print("|  ");
 		for (char i = 4; i < 6; i++) {
 			System.out.print(boardArray[i] + "  |  ");
@@ -64,15 +62,13 @@ public class UC3 {
 		System.out.print("|");
 		System.out.println();
 		System.out.println("___________________");
-		System.out.println();
 		System.out.print("|  ");
 		for (char i = 7; i < 9; i++) {
 			System.out.print(boardArray[i] + "  |  ");
 		}
 		System.out.print(boardArray[9] + "  ");
-		System.out.print("|");
-		System.out.println();
-		System.out.println("___________________");
+		System.out.println("|");
+		System.out.print("___________________");
 	}
 
 	public static void main(String[] args) {
