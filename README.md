@@ -1,2 +1,2 @@
 # Workshop_1_Git-folder
-UC1 on branch1
+UC2 on branch 2
