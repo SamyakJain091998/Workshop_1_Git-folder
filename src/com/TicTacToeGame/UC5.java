@@ -48,27 +48,32 @@ public class UC5 {
 			}
 		}
 		boardArrayIndex[positionOfMove] = 1;
-		System.out.println("Enter 'X' or 'O' down below : ");
-		playerCharacterInput = sc.next().charAt(0);
-		boardArray[positionOfMove] = playerCharacterInput;
-		switch (playerCharacterInput) {
-		case 'X': {
-			playerCharacterInput = 'X';
-			computerCharacterInput = 'O';
-			break;
-		}
-		case 'O': {
-			playerCharacterInput = 'O';
-			computerCharacterInput = 'X';
-			break;
-		}
-		default:
-			throw new IllegalArgumentException("Unexpected value: " + playerCharacterInput);
-		}
+		while (true) {
+			System.out.println("Enter 'X' or 'O' down below : ");
+			playerCharacterInput = sc.next().charAt(0);
+			playerCharacterInput = Character.toUpperCase(playerCharacterInput);
+			boardArray[positionOfMove] = playerCharacterInput;
+			switch (playerCharacterInput) {
+			case 'X': {
+				playerCharacterInput = 'X';
+				computerCharacterInput = 'O';
+				break;
+			}
+			case 'O': {
+				playerCharacterInput = 'O';
+				computerCharacterInput = 'X';
+				break;
+			}
+			default: {
+				System.out.println("Please enter a valid input");
+				continue;
+			}
+			}
 
-		System.out.println("User input is : " + playerCharacterInput + " so the computer input will be : "
-				+ computerCharacterInput);
-		sc.close();
+			System.out.println("User input is : " + playerCharacterInput + " so the computer input will be : "
+					+ computerCharacterInput);
+			break;
+		}
 	}
 
 	// Prints the updated board every time it's called
@@ -80,16 +85,14 @@ public class UC5 {
 			System.out.print(boardArray[i] + "  |  ");
 		}
 		System.out.print(boardArray[3] + "  ");
-		System.out.print("|");
-		System.out.println();
+		System.out.println("|");
 		System.out.println("___________________");
 		System.out.print("|  ");
 		for (char i = 4; i < 6; i++) {
 			System.out.print(boardArray[i] + "  |  ");
 		}
 		System.out.print(boardArray[6] + "  ");
-		System.out.print("|");
-		System.out.println();
+		System.out.println("|");
 		System.out.println("___________________");
 		System.out.print("|  ");
 		for (char i = 7; i < 9; i++) {
