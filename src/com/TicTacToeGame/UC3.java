@@ -8,7 +8,7 @@ public class UC3 {
 	private static char[] Board() {
 		char[] boardArray = new char[10];
 		for (int i = 0; i < boardArray.length; i++) {
-			boardArray[i] = ' ';
+			boardArray[i] = '$';
 		}
 		return boardArray;
 	}
