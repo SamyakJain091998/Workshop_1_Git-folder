@@ -19,8 +19,8 @@ public class UC3 {
 		char computerCharacterInput = ' ';
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter input Mr. player");
-		System.out.println("Enter 'X' or 'O' : ");
+		System.out.println("Time to give input Mr. Player : ");
+		System.out.println("Enter 'X' or 'O' down below : ");
 		firstCharacterInput = sc.next().charAt(0);
 
 		switch (firstCharacterInput) {
@@ -43,7 +43,7 @@ public class UC3 {
 		sc.close();
 	}
 
-	private static void showBoard(char[] boardArray) {
+	private static void ShowBoard(char[] boardArray) {
 		System.out.println("-----THE BOARD-----");
 		System.out.println("__________________");
 		System.out.print("|  ");
@@ -75,6 +75,6 @@ public class UC3 {
 	public static void main(String[] args) {
 		boardArray = Board();
 		// ChooseLetter();
-		showBoard(boardArray);
+		ShowBoard(boardArray);
 	}
 }
