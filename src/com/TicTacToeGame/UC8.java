@@ -1,5 +1,6 @@
 package com.TicTacToeGame;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -157,17 +158,25 @@ public class UC8 {
 	private static int choosingValidPositionForPlayer() {
 		Scanner sc = new Scanner(System.in);
 		while (true) {
-			System.out.println("Enter the position you want to give input in (from 1-9) : ");
-			positionOfMove = sc.nextInt();
-			if (positionOfMove >= 1 && positionOfMove <= 9) {
-				if (IsEmpty(positionOfMove) == false) {
-					System.out.println("The position is not empty. Please give other position input.");
+			
+			try {
+				System.out.println("Enter the position you want to give input in (from 1-9) : ");
+				positionOfMove = sc.nextInt();
+				if (positionOfMove >= 1 && positionOfMove <= 9) {
+					if (IsEmpty(positionOfMove) == false) {
+						System.out.println("The position is not empty. Please give other position input.");
+						continue;
+					}
+					break;
+				} else {
+					System.out.println("Please enter a valid position between 1-9.");
 					continue;
 				}
-				break;
-			} else {
-				System.out.println("Please enter a valid position between 1-9.");
-				continue;
+			} catch (InputMismatchException e) {
+				// TODO: handle exception
+				System.out.println("Invalid input");
+				positionOfMove = choosingValidPositionForPlayer();
+				return positionOfMove;
 			}
 		}
 		return positionOfMove;
@@ -201,7 +210,7 @@ public class UC8 {
 		assign_Input_Character_To_Player_Or_Computer(2);
 		while (true) {
 			int randomPositionForComputer = new Random().nextInt(9);
-			if(randomPositionForComputer == 0) {
+			if (randomPositionForComputer == 0) {
 				continue;
 			}
 			if (IsEmpty(randomPositionForComputer) == true) {
